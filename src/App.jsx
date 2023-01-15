@@ -63,13 +63,16 @@ function App() {
       <div>
         {won && (
           <div>
-            <Confetti width={window.innerWidth} height={window.innerHeight} />
-            <h1 className="text-xl text-zinc-300">You Won!</h1>
+            <Confetti
+              width={window.innerWidth - 2}
+              height={window.innerHeight - 2}
+            />
+            <h1 className="text-lg text-zinc-300 sm:text-xl">You Won!</h1>
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-row gap-5">
+      <div className="flex flex-col gap-3 sm:gap-5">
+        <div className="flex flex-row gap-3 sm:gap-5">
           <Dice
             handleClick={() => handleFreeze(0)}
             status={frozen[0]}
@@ -96,7 +99,7 @@ function App() {
             value={values[4]}
           />
         </div>
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row gap-3 sm:gap-5">
           <Dice
             handleClick={() => handleFreeze(5)}
             status={frozen[5]}
@@ -128,7 +131,7 @@ function App() {
         <div>
           <button
             onClick={roll}
-            className="text-xl text-zinc-300 hover:text-purple-400 active:text-purple-200"
+            className="text-lg text-zinc-300 hover:text-purple-400 active:text-purple-200 sm:text-xl"
           >
             Roll
           </button>
@@ -137,7 +140,7 @@ function App() {
         <div>
           <button
             onClick={restart}
-            className="text-xl text-zinc-300 hover:text-purple-400 active:text-purple-200"
+            className="text-lg text-zinc-300 hover:text-purple-400 active:text-purple-200 sm:text-xl"
           >
             Restart
           </button>
