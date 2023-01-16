@@ -62,7 +62,7 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-20 bg-zinc-900 sm:gap-10">
+    <div className="flex h-screen flex-col items-center justify-center gap-20 bg-zinc-900 sm:gap-10 lg:gap-16">
       <div>
         {won ? (
           <div>
