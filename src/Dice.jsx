@@ -1,25 +1,189 @@
 import { useState } from "react";
 
 function Dice({ value, status, handleClick }) {
-  return (
-    <div>
-      {status ? (
-        <button
-          onClick={handleClick}
-          className="flex h-12 w-12 items-center justify-center border-2 border-green-400 text-lg text-green-200 hover:border-green-200 hover:text-green-200 sm:h-14 sm:w-14 sm:border-4 sm:text-xl lg:h-20 lg:w-20"
-        >
-          {value}
-        </button>
-      ) : (
-        <button
-          onClick={handleClick}
-          className="flex h-12 w-12 items-center justify-center border-2 border-zinc-500 text-lg text-zinc-300 hover:border-zinc-300 hover:text-zinc-300 sm:h-14 sm:w-14 sm:border-4 sm:text-xl lg:h-20 lg:w-20"
-        >
-          {value}
-        </button>
-      )}
-    </div>
-  );
+  let dice;
+
+  if (status) {
+    switch (value) {
+      case 1:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 2:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 3:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 4:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 5:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <p className="absolute top-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></p>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 6:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-green-400 p-4 text-center hover:border-green-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-400 group-hover:bg-green-300"></div>
+            </div>
+          </button>
+        );
+        break;
+    }
+  } else {
+    switch (value) {
+      case 1:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 2:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 3:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 4:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 5:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <p className="absolute top-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></p>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+      case 6:
+        dice = (
+          <button
+            onClick={handleClick}
+            className="group rounded-lg border-4 border-zinc-400 p-4 text-center hover:border-zinc-300"
+          >
+            <div className="relative flex h-12 w-12 items-center justify-center">
+              <div className="absolute top-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute top-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="center-0 absolute h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 left-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+              <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-zinc-400 group-hover:bg-zinc-300"></div>
+            </div>
+          </button>
+        );
+        break;
+    }
+  }
+
+  return <div>{dice}</div>;
 }
 
 export default Dice;
