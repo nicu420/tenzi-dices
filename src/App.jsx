@@ -75,11 +75,25 @@ function App() {
             </h1>
           </div>
         ) : (
-          <h1 className="text-lg text-zinc-300 sm:text-xl">Counter: {count}</h1>
+          <div>
+            {count ? (
+              <h1 className="text-lg text-zinc-300 sm:text-xl">
+                Counter: {count}
+              </h1>
+            ) : (
+              <div className="max-w-xs text-center sm:max-w-screen-md">
+                <h1 className="text-xl text-zinc-300">Welcome!</h1>
+                <h1 className="text-md mt-2 text-zinc-300">
+                  Your mission is to collect 10 identical dice faces with the
+                  least amount of rolls possible
+                </h1>
+              </div>
+            )}
+          </div>
         )}
       </div>
-      <div className="flex flex-col gap-3 sm:gap-5">
-        <div className="flex flex-row gap-3 sm:gap-5">
+      <div className="flex flex-col gap-2 sm:gap-5">
+        <div className="flex flex-row gap-2 sm:gap-5">
           <Dice
             handleClick={() => handleFreeze(0)}
             status={frozen[0]}
@@ -106,7 +120,7 @@ function App() {
             value={values[4]}
           />
         </div>
-        <div className="flex flex-row gap-3 sm:gap-5">
+        <div className="flex flex-row gap-2 sm:gap-5">
           <Dice
             handleClick={() => handleFreeze(5)}
             status={frozen[5]}
