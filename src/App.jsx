@@ -62,7 +62,7 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-10 bg-zinc-900">
+    <div className="flex h-screen flex-col items-center justify-center gap-48 bg-zinc-900 sm:gap-10">
       <div>
         {won ? (
           <div>
@@ -70,10 +70,12 @@ function App() {
               width={window.innerWidth - 2}
               height={window.innerHeight - 2}
             />
-            <h1 className="text-lg text-zinc-300 sm:text-xl">You Won!</h1>
+            <h1 className="text-lg text-zinc-300 sm:text-xl">
+              You won by only rolling {count} time{count != 1 && "s"}!
+            </h1>
           </div>
         ) : (
-          <h1 className="text-lg text-zinc-300 sm:text-xl">count: {count}</h1>
+          <h1 className="text-lg text-zinc-300 sm:text-xl">Counter: {count}</h1>
         )}
       </div>
       <div className="flex flex-col gap-3 sm:gap-5">
@@ -147,7 +149,7 @@ function App() {
             onClick={restart}
             className="text-lg text-zinc-300 hover:text-purple-400 active:text-purple-200 sm:text-xl"
           >
-            Restart
+            Play again
           </button>
         </div>
       )}
