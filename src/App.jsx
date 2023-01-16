@@ -7,6 +7,7 @@ function App() {
   const [frozen, setFrozen] = useState(Array(10).fill(false));
   const [rememberedValue, setRememberedValue] = useState(0);
   const [won, setWon] = useState(false);
+  const [count, setCount] = useState(0);
 
   if (!values[0]) {
     roll();
@@ -24,6 +25,7 @@ function App() {
       }
     }
     setValues(newValues);
+    setCount(count + 1);
   }
 
   function handleFreeze(i) {
@@ -56,12 +58,13 @@ function App() {
     setFrozen(Array(10).fill(false));
     setRememberedValue(0);
     setWon(false);
+    setCount(0);
   }
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-10 bg-zinc-900">
       <div>
-        {won && (
+        {won ? (
           <div>
             <Confetti
               width={window.innerWidth - 2}
@@ -69,6 +72,8 @@ function App() {
             />
             <h1 className="text-lg text-zinc-300 sm:text-xl">You Won!</h1>
           </div>
+        ) : (
+          <h1 className="text-lg text-zinc-300 sm:text-xl">count: {count}</h1>
         )}
       </div>
       <div className="flex flex-col gap-3 sm:gap-5">
