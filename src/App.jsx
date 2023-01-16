@@ -7,10 +7,11 @@ function App() {
   const [frozen, setFrozen] = useState(Array(10).fill(false));
   const [rememberedValue, setRememberedValue] = useState(0);
   const [won, setWon] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(-1);
 
   if (!values[0]) {
     roll();
+    // setCount(0);
   }
 
   function roll() {
@@ -58,7 +59,7 @@ function App() {
     setFrozen(Array(10).fill(false));
     setRememberedValue(0);
     setWon(false);
-    setCount(0);
+    setCount(-1);
   }
 
   return (
