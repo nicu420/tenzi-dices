@@ -11,7 +11,6 @@ function App() {
 
   if (!values[0]) {
     roll();
-    // setCount(0);
   }
 
   function roll() {
